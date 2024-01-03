@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Ajuste a altura conforme necessário */
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333; /* Cor do texto do título */
+}
+
+.file-upload {
+  /* Estilizações adicionais para a área de upload de arquivo */
+}
