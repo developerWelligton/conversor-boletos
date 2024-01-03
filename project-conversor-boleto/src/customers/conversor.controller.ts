@@ -8,7 +8,7 @@ export class ConversorController {
 
     // Exemplo de um endpoint GET
     @Get()
-    getHello(): string {
-        return 'Hello, this is a test API!';
-    }
+getHello(): { message: string } {
+    return { message: 'Hello, this is a test API!2' };
+}
 }
