@@ -71,3 +71,7 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+
+npm install pdf-parse
+npm install @types/multer --save-dev

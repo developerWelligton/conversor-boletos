@@ -15,13 +15,26 @@ export class ReceivePdfComponent {
   onFileSelected(event: any): void {
     this.selectedFile = event.target.files[0];
     // Aqui você pode adicionar mais lógica, como exibir o PDF, enviar para um servidor, etc.
-    this.conversorService.getHello().subscribe(res => {
-      console.log("res"+res)
-    })
+
   }
   onButtonClick() {
-    this.conversorService.getHello().subscribe(data => {
-      console.log(data);
-    })
+    if (this.selectedFile) {
+      const formData = new FormData();
+      formData.append('pdfFile', this.selectedFile);
+
+      this.conversorService.uploadPdf(formData).subscribe(
+        (response) => {
+          console.log('Arquivo enviado com sucesso');
+          // Faça algo com a resposta do servidor, que pode conter dados extraídos do PDF.
+        },
+        (error) => {
+          console.error('Erro ao enviar o arquivo:', error);
+          // Trate o erro de acordo com sua lógica de manipulação de erros.
+        }
+      );
+    } else {
+      console.warn('Nenhum arquivo selecionado.');
+      // Lide com o caso em que nenhum arquivo foi selecionado.
+    }
   }
 }
